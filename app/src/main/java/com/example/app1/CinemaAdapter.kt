@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.app1.databinding.CinemaItemBinding
 
 class CinemaAdapter: RecyclerView.Adapter<CinemaAdapter.CinemaHolder>() {
+    val plantList = ArrayList<Cinema>()
 
     class CinemaHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = CinemaItemBinding.bind(item)
@@ -22,10 +23,14 @@ class CinemaAdapter: RecyclerView.Adapter<CinemaAdapter.CinemaHolder>() {
     }
 
     override fun onBindViewHolder(holder: CinemaHolder, position: Int) {
-//        holder.bind()
+        holder.bind(plantList[position])
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return plantList.size
+    }
+
+    fun addCinema(cinema: Cinema) {
+        plantList.add(cinema)
     }
 }
