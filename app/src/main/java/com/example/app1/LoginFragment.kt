@@ -14,7 +14,7 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
             val username = edit_text_username.text.toString()
             val password = edit_text_password.text.toString()
 
-            val action = LoginFragmentDirections.actionLoginFragmentToCinemaListFragment(username, password)
+            val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment(username)
             findNavController().navigate(action)
         }
     }

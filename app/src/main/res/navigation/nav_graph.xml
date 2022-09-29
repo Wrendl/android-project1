@@ -3,39 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.app1.HomeFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-    </fragment>
+    app:startDestination="@id/filmListFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.app1.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_cinemaListFragment"
-            app:destination="@id/cinemaListFragment" />
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/cinemaListFragment"
         android:name="com.example.app1.CinemaListFragment"
         android:label="cinema_list_fragment"
-        tools:layout="@layout/cinema_list_fragment" >
+        tools:layout="@layout/cinema_list_fragment" />
+    <fragment
+        android:id="@+id/filmListFragment"
+        android:name="com.example.app1.FilmListFragment"
+        android:label="film_list_fragment"
+        tools:layout="@layout/film_list_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.app1.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
         <argument
             android:name="username"
-            app:argType="string" />
-        <argument
-            android:name="password"
             app:argType="string" />
     </fragment>
 </navigation>
