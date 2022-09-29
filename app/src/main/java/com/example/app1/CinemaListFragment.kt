@@ -1,14 +1,18 @@
 package com.example.app1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.cinema_list_fragment.*
 
-class CinemaListFragment: Fragment() {
+const val EXTRA_MESSAGE = "com.example.app1.MESSAGE"
+
+class CinemaListFragment: Fragment(), CinemaAdapter.OnItemClickListener {
 
     val list1 = ArrayList<Cinema>()
 
@@ -33,6 +37,16 @@ class CinemaListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         rcView.layoutManager = LinearLayoutManager(activity)
-        rcView.adapter = context?.let { CinemaAdapter(list1) }
+        rcView.adapter = context?.let { CinemaAdapter(list1, this) }
+    }
+
+    override fun onItemClick(position: Int) {
+        Toast.makeText(activity, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        val clickedItem = list1[position]
+        val message = list1[position]
+        val intent = Intent(activity, SecondActivity::class.java).apply{
+            putExtra(EXTRA_MESSAGE, message)
+        }
+        startActivity(intent)
     }
 }
