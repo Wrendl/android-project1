@@ -1,15 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/filmListFragment"
+        android:icon="@mipmap/movies_icon_foreground"
         android:title="Films"/>
 
     <item
         android:id="@+id/cinemaListFragment"
+        android:icon="@mipmap/cinemas_icon_foreground"
         android:title="Cinemas"/>
+
+
+    <item
+        android:id="@+id/ticketsFragment"
+        android:icon="@mipmap/tickets_icon_foreground"
+        android:title="Tickets"/>
 
     <item
         android:id="@+id/loginFragment"
+        android:icon="@mipmap/profile_icon_foreground"
         android:title="Profile"/>
+
 </menu>

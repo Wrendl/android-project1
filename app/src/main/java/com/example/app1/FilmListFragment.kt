@@ -1,5 +1,6 @@
 package com.example.app1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,16 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.film_list_fragment.*
 import com.example.app1.databinding.FilmListFragmentBinding
 
-class FilmListFragment: Fragment() {
 
-    val list1 = ArrayList<Film>()
+const val EXTRA_MESSAGE1 = "com.example.app1.MESSAGE"
+
+class FilmListFragment: Fragment(), FilmAdapter.OnItemClickListener {
+
+    val filmArr = filmList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val film = Film(R.drawable.c1, "Film", "cool", "comedy", 2, listOf("asd", "asd"), 2.8, "16+")
-        val film1 = Film(R.drawable.c1, "Film 1", "cool", "comedy", 2, listOf("asd", "asd"), 2.8, "16+")
-        list1.add(film)
-        list1.add(film1)
     }
 
     override fun onCreateView(
@@ -34,6 +34,16 @@ class FilmListFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         rcView.layoutManager = LinearLayoutManager(activity)
-        rcView.adapter = context?.let { FilmAdapter(list1) }
+        rcView.adapter = context?.let { FilmAdapter(filmArr, this)}
+    }
+
+    override fun onItemClick(position: Int) {
+//        Toast.makeText(activity, "Item $position clicked", Toast.LENGTH_SHORT).show()
+        val clickedItem = filmArr[position]
+        val message = filmArr[position]
+        val intent = Intent(activity, FilmActivity::class.java).apply{
+            putExtra(EXTRA_MESSAGE1, message)
+        }
+        startActivity(intent)
     }
 }

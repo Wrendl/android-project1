@@ -7,14 +7,30 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app1.databinding.FilmItemBinding
 
-class FilmAdapter(val filmList: ArrayList<Film>): RecyclerView.Adapter<FilmAdapter.FilmHolder>() {
+class FilmAdapter(val filmList: ArrayList<Film>, private val listener: FilmAdapter.OnItemClickListener):
+    RecyclerView.Adapter<FilmAdapter.FilmHolder>() {
 
-    class FilmHolder(item: View): RecyclerView.ViewHolder(item) {
+    inner class FilmHolder(item: View): RecyclerView.ViewHolder(item),   View.OnClickListener {
         val binding = FilmItemBinding.bind(item)
         fun bind(film: Film) = with(binding){
             imFilm.setImageResource(film.imageId)
             tvFilm.text = film.title
         }
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmHolder {
