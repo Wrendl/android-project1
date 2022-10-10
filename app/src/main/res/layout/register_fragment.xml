@@ -8,7 +8,7 @@
     android:padding="20dp"
     android:showDividers="middle"
     android:divider="@drawable/empty_tall_devider"
-    tools:context=".LoginFragment">
+    tools:context=".RegistrationFragment">
 
     <EditText
         android:id="@+id/edit_text_username"
@@ -17,7 +17,16 @@
         android:padding="12dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_edittext"
-        android:hint="Введите логин" />
+        android:hint="Логин" />
+
+    <EditText
+        android:id="@+id/edit_text_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Мэйл" />
 
     <EditText
         android:layout_width="match_parent"
@@ -26,18 +35,18 @@
         android:textSize="18sp"
         android:background="@drawable/rounded_edittext"
         android:id="@+id/edit_text_password"
-        android:hint="Введите пароль"
+        android:hint="Пароль"
         android:inputType="textPassword"/>
 
-    <Button
-        android:id="@+id/button_confirm"
+
+    <EditText
+        android:id="@+id/edit_text_password_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="12dp"
         android:textSize="18sp"
-        android:textColor="#ffffff"
-        android:backgroundTint="@color/accent_color"
-        android:background="@drawable/custom_button_1"
-        android:text="Войти"/>
+        android:background="@drawable/rounded_edittext"
+        android:hint="Подтверждение пароля" />
 
     <Button
         android:id="@+id/button_register"
@@ -47,6 +56,16 @@
         android:textColor="#ffffff"
         android:backgroundTint="@color/accent_color"
         android:background="@drawable/custom_button_1"
-        android:text="Создать аккаунт"/>
+        android:text="Зарегистрироваться"/>
+
+    <Button
+        android:id="@+id/button_to_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="@color/accent_color"
+        android:background="@drawable/custom_button_1"
+        android:text="Логин"/>
 
 </LinearLayout>
