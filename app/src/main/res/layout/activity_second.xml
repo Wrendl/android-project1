@@ -14,11 +14,26 @@
         app:srcCompat="@drawable/c2" />
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvCinemaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imCinemaDetail"
-        android:layout_marginTop="74dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvCinemaGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCinemaTitle"
+        android:layout_marginTop="10dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvFilmDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCinemaGenre"
+        android:layout_marginTop="10dp"
         android:text="TextView" />
 </RelativeLayout>

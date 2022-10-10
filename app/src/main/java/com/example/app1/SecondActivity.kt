@@ -11,7 +11,7 @@ class SecondActivity : AppCompatActivity() {
         val message = intent.getSerializableExtra(EXTRA_MESSAGE) as? Cinema
 
         if (message != null) {
-            tvTitle.text = message.title
+            tvCinemaTitle.text = message.title
         }
         if (message != null) {
             imCinemaDetail.setImageResource(message.imageId)
