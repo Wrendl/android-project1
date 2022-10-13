@@ -8,7 +8,7 @@
     android:padding="20dp"
     android:showDividers="middle"
     android:divider="@drawable/empty_tall_devider"
-    tools:context=".RegistrationFragment">
+    tools:context=".auth.RegistrationFragment">
 
     <EditText
         android:id="@+id/edit_text_username"

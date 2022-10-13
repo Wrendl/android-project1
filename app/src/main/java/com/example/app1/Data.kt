@@ -1,5 +1,8 @@
 package com.example.app1
 
+import com.example.app1.data.cinema.Cinema
+import com.example.app1.data.film.Film
+
 fun cinemaList(): ArrayList<Cinema> {
     val list1 = ArrayList<Cinema>()
     val c1 = Cinema(R.drawable.c1,"Cinemax (Dostyk Plaza) Dolby Atmos", "г. Алматы, Самал-2, д. 111, уг.ул. Жолдасбекова, ТРЦ «Достык Плаза»",

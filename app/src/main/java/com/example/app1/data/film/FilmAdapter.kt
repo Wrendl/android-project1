@@ -1,13 +1,13 @@
-package com.example.app1
+package com.example.app1.data.film
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app1.R
 import com.example.app1.databinding.FilmItemBinding
 
-class FilmAdapter(val filmList: ArrayList<Film>, private val listener: FilmAdapter.OnItemClickListener):
+class FilmAdapter(val filmList: ArrayList<Film>, private val listener: OnItemClickListener):
     RecyclerView.Adapter<FilmAdapter.FilmHolder>() {
 
     inner class FilmHolder(item: View): RecyclerView.ViewHolder(item),   View.OnClickListener {

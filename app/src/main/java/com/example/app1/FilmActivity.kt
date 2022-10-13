@@ -2,6 +2,8 @@ package com.example.app1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.app1.data.film.Film
+import com.example.app1.main_list.EXTRA_MESSAGE
 import kotlinx.android.synthetic.main.activity_film.*
 
 class FilmActivity : AppCompatActivity() {

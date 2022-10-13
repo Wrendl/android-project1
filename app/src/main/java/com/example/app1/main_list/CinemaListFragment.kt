@@ -1,13 +1,16 @@
-package com.example.app1
+package com.example.app1.main_list
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app1.R
+import com.example.app1.SecondActivity
+import com.example.app1.cinemaList
+import com.example.app1.data.cinema.CinemaAdapter
 import kotlinx.android.synthetic.main.cinema_list_fragment.*
 
 const val EXTRA_MESSAGE = "com.example.app1.MESSAGE"

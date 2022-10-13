@@ -1,11 +1,11 @@
-package com.example.app1
+package com.example.app1.auth
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.app1.R
 import kotlinx.android.synthetic.main.login_fragment.*
 
 class LoginFragment: Fragment(R.layout.login_fragment) {

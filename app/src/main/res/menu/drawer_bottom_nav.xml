@@ -11,7 +11,6 @@
         android:icon="@mipmap/cinemas_icon_foreground"
         android:title="Cinemas"/>
 
-
     <item
         android:id="@+id/ticketsFragment"
         android:icon="@mipmap/tickets_icon_foreground"

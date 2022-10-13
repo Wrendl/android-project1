@@ -40,15 +40,15 @@
                 android:id="@+id/tvCinema"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:layout_toEndOf="@+id/imCinema"
-                android:text="Movie Theater Name" />
+                android:text="Movie Theater Name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

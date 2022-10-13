@@ -10,4 +10,5 @@
     <color name="grey">#919090</color>
     <color name="custom_grey">#888888</color>
     <color name="accent_color">#FC144B</color>
+    <color name="ui_black">#191C1E</color>
 </resources>

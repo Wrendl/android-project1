@@ -1,10 +1,10 @@
-package com.example.app1
+package com.example.app1.data.cinema
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app1.R
 import com.example.app1.databinding.CinemaItemBinding
 
 class CinemaAdapter(val cinemaList: ArrayList<Cinema>, private val listener: OnItemClickListener): RecyclerView.Adapter<CinemaAdapter.CinemaHolder>() {

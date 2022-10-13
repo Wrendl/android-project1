@@ -1,4 +1,4 @@
-package com.example.app1
+package com.example.app1.main_list
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app1.FilmActivity
+import com.example.app1.R
+import com.example.app1.data.film.FilmAdapter
+import com.example.app1.filmList
 import kotlinx.android.synthetic.main.film_list_fragment.*
-import com.example.app1.databinding.FilmListFragmentBinding
 
 
 const val EXTRA_MESSAGE1 = "com.example.app1.MESSAGE"
@@ -34,7 +37,7 @@ class FilmListFragment: Fragment(), FilmAdapter.OnItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         rcView.layoutManager = LinearLayoutManager(activity)
-        rcView.adapter = context?.let { FilmAdapter(filmArr, this)}
+        rcView.adapter = context?.let { FilmAdapter(filmArr, this) }
     }
 
     override fun onItemClick(position: Int) {

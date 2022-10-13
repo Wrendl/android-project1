@@ -6,7 +6,7 @@
     app:startDestination="@id/filmListFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.app1.LoginFragment"
+        android:name="com.example.app1.auth.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
@@ -21,18 +21,8 @@
             app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
-        android:id="@+id/cinemaListFragment"
-        android:name="com.example.app1.CinemaListFragment"
-        android:label="cinema_list_fragment"
-        tools:layout="@layout/cinema_list_fragment" />
-    <fragment
-        android:id="@+id/filmListFragment"
-        android:name="com.example.app1.FilmListFragment"
-        android:label="film_list_fragment"
-        tools:layout="@layout/film_list_fragment" />
-    <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.app1.ProfileFragment"
+        android:name="com.example.app1.auth.ProfileFragment"
         android:label="profile_fragment"
         tools:layout="@layout/profile_fragment" >
         <argument
@@ -41,11 +31,24 @@
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.app1.RegistrationFragment"
+        android:name="com.example.app1.auth.RegistrationFragment"
         android:label="register_fragment"
         tools:layout="@layout/register_fragment" >
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cinemaListFragment"
+        android:name="com.example.app1.main_list.CinemaListFragment"
+        android:label="cinema_list_fragment"
+        tools:layout="@layout/cinema_list_fragment" />
+    <fragment
+        android:id="@+id/filmListFragment"
+        android:name="com.example.app1.main_list.FilmListFragment"
+        android:label="film_list_fragment"
+        tools:layout="@layout/film_list_fragment" />
 </navigation>
