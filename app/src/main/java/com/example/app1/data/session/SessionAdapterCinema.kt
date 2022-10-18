@@ -5,17 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import com.example.app1.R
-import com.example.app1.databinding.SessionItemFilmBinding
-import kotlinx.android.synthetic.main.session_item_for_cinema.view.*
+import com.example.app1.databinding.SessionItemForCinemaBinding
 
 
 class SessionAdapterCinema(val sessionList: ArrayList<Session>, private val listener: OnItemClickListener): RecyclerView.Adapter<SessionAdapterCinema.SessionHolderCinema>() {
 
     inner class SessionHolderCinema(item: View): RecyclerView.ViewHolder(item),  View.OnClickListener{
-        val binding = SessionItemFilmBinding.bind(item)
+        val binding = SessionItemForCinemaBinding.bind(item)
         fun bind(session: Session) = with(binding){
             tvSessionTime.text = session.time
-            tvSessionCinemaTitle.text = session.cinemaTitle
+            tvSessionFilmTitle.text = session.filmTitle
         }
 
         init {
@@ -35,7 +34,7 @@ class SessionAdapterCinema(val sessionList: ArrayList<Session>, private val list
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SessionHolderCinema {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.session_item_film, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.session_item_for_cinema, parent, false)
         return SessionHolderCinema(view)
     }
 
