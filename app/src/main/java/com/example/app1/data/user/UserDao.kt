@@ -16,5 +16,8 @@ interface UserDao {
     fun  readAllData(): List<User>
 
     @Query("SELECT * FROM user_table WHERE id = :user_id")
-    fun  getUser(user_id: Int): LiveData<User>
+    fun  getUser(user_id: Int): User
+
+    @Query("SELECT * FROM user_table WHERE login = :user_login")
+    fun  getUserByLogin(user_login: String): User
 }

@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.app1.CinemaActivity
 import com.example.app1.R
-import com.example.app1.SecondActivity
 import com.example.app1.cinemaList
 import com.example.app1.data.cinema.CinemaAdapter
 import kotlinx.android.synthetic.main.cinema_list_fragment.*
@@ -43,7 +43,7 @@ class CinemaListFragment: Fragment(), CinemaAdapter.OnItemClickListener {
 //        Toast.makeText(activity, "Item $position clicked", Toast.LENGTH_SHORT).show()
         val clickedItem = cinemaArr[position]
         val message = cinemaArr[position]
-        val intent = Intent(activity, SecondActivity::class.java).apply{
+        val intent = Intent(activity, CinemaActivity::class.java).apply{
             putExtra(EXTRA_MESSAGE, message)
         }
         startActivity(intent)

@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 class UserViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: List<User>
-//    val getUser: User =
     private val repository: UserRepository
 
     init {
@@ -19,10 +18,12 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         readAllData = repository.readAllData
     }
 
-    fun getUser() {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.getUser()
-        }
+    fun getUser(id: Int): User {
+        return repository.getUser(id)
+    }
+
+    fun getUserByLogin(user_login: String): User {
+        return repository.getUserByLogin(user_login)
     }
 
     fun addUser(user: User) {

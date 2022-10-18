@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.register_fragment.*
 
 class RegistrationFragment: Fragment(R.layout.register_fragment) {
 
-//    private val args: ProfileFragmentArgs by navArgs()
     private lateinit var mUserViewModel: UserViewModel
 
     private fun insertDataToDatabase() {
@@ -32,6 +31,9 @@ class RegistrationFragment: Fragment(R.layout.register_fragment) {
         }
         else if (firstPassword.toString() != secondPassword.toString()) {
             Toast.makeText(activity, "Passwords don't match", Toast.LENGTH_LONG).show()
+        }
+        else if (checkExistAccount(login.toString())) {
+            Toast.makeText(activity, "Account already exist", Toast.LENGTH_LONG).show()
         }
         else {
             val user = User(0, login.toString(), firstPassword.toString(), mail.toString())
@@ -57,6 +59,17 @@ class RegistrationFragment: Fragment(R.layout.register_fragment) {
         button_to_login.setOnClickListener {
             val action = RegistrationFragmentDirections.actionRegistrationFragmentToLoginFragment()
             findNavController().navigate(action)
+        }
+    }
+
+    private fun checkExistAccount(login: String): Boolean {
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        try {
+            mUserViewModel.getUserByLogin(login).login
+            return true
+        }
+        catch (e: Exception) {
+            return false
         }
     }
 }

@@ -18,19 +18,14 @@ import kotlin.math.log
 
 class ProfileFragment: Fragment(R.layout.profile_fragment) {
 
-//    private val args: ProfileFragmentArgs by navArgs()
     private lateinit var mUserViewModel: UserViewModel
-
-
+    private val args: ProfileFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        username_text.text = args.username
-
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-//        username_text.text = mUserViewModel.getUser.value?.login ?: "qq"
-        username_text.text = mUserViewModel.getUser()
+        username_text.text = mUserViewModel.getUserByLogin(args.login).login
 
     }
 }

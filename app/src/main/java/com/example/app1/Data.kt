@@ -2,6 +2,7 @@ package com.example.app1
 
 import com.example.app1.data.cinema.Cinema
 import com.example.app1.data.film.Film
+import com.example.app1.data.session.Session
 
 fun cinemaList(): ArrayList<Cinema> {
     val list1 = ArrayList<Cinema>()
@@ -168,5 +169,33 @@ fun filmList(): ArrayList<Film> {
     list1.add(f8)
     list1.add(f9)
     list1.add(f10)
+    return list1
+}
+
+fun sessionList(): ArrayList<Session> {
+    val list1 = ArrayList<Session>()
+    list1.add(Session(1,"20:00","Аватар (2009)",1,"Kinopark 11 (Есентай) IMAX",4,"Russian","2000 tg","1200 tg","800 tg","5000 tg",5))
+    list1.add(Session(2,"15:00","Быстрее пули",2,"Chaplin MEGA Park (ул. Макатаева)",3,"Russian","1700 tg","1000 tg","600 tg","4000 tg",3))
+    list1.add(Session(3,"23:00", "Ударная волна: Битва за Гонконг", 3, "Lumiera Cinema", 2, "English, Russian", "2200 tg", "1600 tg", "700 tg", "5500 tg", 12))
+    list1.add(Session(4, "19:00", "Зверь", 4, "Cinemax (Dostyk Plaza) Dolby Atmos", 1, "Russian", "2000 tg", "1200 tg", "800 tg", "5000 tg", 10))
+    list1.add(Session(5, "14:00", "Эра выживания", 5, "Chaplin ADK 3D", 6, "Russian", "1700 tg", "1000 tg", "600 tg", "4000 tg", 4))
+    list1.add(Session(6, "23:00", "Апгрейд. Цифровой солдат", 7, "Kinopark 16 Forum", 5, "Russian", "2200 tg", "1600 tg", "700 tg", "5500 tg", 9))
+    list1.add(Session(7, "00:00", "Дос-Мұқасан", 8, "Chaplin ADK 3D", 6, "English, Russian", "1500 tg", "1600 tg", "700 tg", "5500 tg", 8))
+    list1.add(Session(8, "01:00", "Решение уйти", 9, "Kinopark 8 Moskva", 7, "English, Russian", "1800 tg", "1600 tg", "700 tg", "5500 tg", 5))
+    list1.add(Session(9, "15:00", "Бишарашки", 10, "Lumiera Cinema", 2, "Казахский", "1500 tg", "1600 tg", "700 tg", "5500 tg", 7))
+    list1.add(Session(10, "19:00", "Билет в рай", 6, "Kinopark 5 Atakent", 8, "English, Russian", "2200 tg", "1600 tg", "700 tg", "5500 tg", 3))
+//    11, 20:00, Аватар (2009), 1, Lumiera Cinema, 2, Russian, 2000 tg, 1200 tg, 800 tg, 5000 tg, 5
+//    12, 12:00, Аватар (2009), 1, Cinemax (Dostyk Plaza) Dolby Atmos, 1, Russian, 1200 tg, 1000 tg, 600 tg, 4000 tg, 4
+//    13, 18:00, Аватар (2009), 1, Chaplin MEGA Park (ул. Макатаева), 3, Russian, 1800 tg, 1600 tg, 700 tg, 5500 tg, 5
+//    14, 12:00, Быстрее пули, 2, Lumiera Cinema, 2, Russian, 1400 tg, 1000 tg, 600 tg, 4000 tg, 3
+//    15, 15:00, Быстрее пули, 2, Cinemax (Dostyk Plaza) Dolby Atmos, 1, Russian, 1700 tg, 1300 tg, 900 tg, 4000 tg, 9
+//    16, 17:00, Быстрее пули, 2, Kinopark 16 Forum, 5, Russian, 1800 tg, 1400 tg, 1000 tg, 4000 tg, 4
+//    17, 19:00, Ударная волна: Битва за Гонконг, 3, Kinopark 11 (Есентай) IMAX, 4, English\Russian, 1800 tg, 1600 tg, 700 tg, 5500 tg, 7
+//    18, 22:00, Ударная волна: Битва за Гонконг, 3, Chaplin MEGA Park (ул. Макатаева), 3, English\Russian, 2200 tg, 1600 tg, 700 tg, 5500 tg, 1
+//    19, 21:00, Ударная волна: Битва за Гонконг, 3, Cinemax (Dostyk Plaza) Dolby Atmos, 1, English\Russian, 1900 tg, 1600 tg, 700 tg, 5500 tg, 2
+//    20, 12:00, Дос-Мұқасан, 8, Kinopark 8 Moskva, 7, Russian\Kazakh, 1500 tg, 1600 tg, 700 tg, 5100 tg, 8
+//    21, 16:00, Дос-Мұқасан, 8, Lumiera Cinema, 2, Russian\Kazakh, 1600 tg, 1700 tg, 800 tg, 5200 tg, 11
+//    22, 17:00, Дос-Мұқасан, 8, Kinopark 5 Atakent, 8, Russian\Kazakh, 1700 tg, 1800 tg, 900 tg, 5300 tg, 14
+
     return list1
 }
