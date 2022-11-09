@@ -3,6 +3,7 @@ package com.example.app1.data.film
 import java.io.Serializable
 
 data class Film(
+    val id: Int,
     val imageId: Int,
     val title: String,
     val description: String,

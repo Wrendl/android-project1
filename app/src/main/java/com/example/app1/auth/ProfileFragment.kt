@@ -26,6 +26,5 @@ class ProfileFragment: Fragment(R.layout.profile_fragment) {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         username_text.text = mUserViewModel.getUserByLogin(args.login).login
-
     }
 }

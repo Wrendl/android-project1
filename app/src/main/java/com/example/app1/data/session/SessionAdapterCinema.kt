@@ -15,6 +15,11 @@ class SessionAdapterCinema(val sessionList: ArrayList<Session>, private val list
         fun bind(session: Session) = with(binding){
             tvSessionTime.text = session.time
             tvSessionFilmTitle.text = session.filmTitle
+            sessionLanguage.text = session.language
+            priceChild.text = session.priceChild
+            priceAdult.text = session.priceAdult
+            priceStudent.text = session.priceStud
+            priceVip.text = session.priceVip
         }
 
         init {

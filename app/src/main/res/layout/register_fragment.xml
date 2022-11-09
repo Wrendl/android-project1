@@ -46,7 +46,8 @@
         android:padding="12dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_edittext"
-        android:hint="Подтверждение пароля" />
+        android:hint="Подтверждение пароля"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/button_register"

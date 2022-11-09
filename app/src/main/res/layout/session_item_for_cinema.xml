@@ -7,12 +7,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:cardCornerRadius="10dp"
+        android:background="@color/ui_black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,35 +23,107 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="0dp"
+            android:background="@color/grey_background"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvSessionTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:padding="10dp"
                 android:text="00:00"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <View
+                android:id="@+id/time_divider"
+                android:layout_width="1.5dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:background="@color/custom_grey"
+                android:layout_toEndOf="@+id/tvSessionTime" />
 
             <TextView
                 android:id="@+id/tvSessionFilmTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_alignTop="@+id/tvSessionTime"
+                android:layout_toEndOf="@+id/time_divider"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_toEndOf="@+id/tvSessionTime"
-                android:text="Avatar"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Avatar"
+                />
+
+            <TextView
+                android:id="@+id/session_language"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvSessionTime"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/time_divider"
+                android:text="Language"
+                android:textColor="@color/custom_grey" />
+
+            <TextView
+                android:id="@+id/price_adult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvSessionTime"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/session_language"
+                android:text="1000"
+                android:textColor="@color/custom_grey"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price_student"
+                android:textColor="@color/custom_grey"
+                android:textSize="14sp"
+                android:layout_alignBottom="@+id/tvSessionTime"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/price_adult"
+                android:layout_marginStart="10dp"
+                android:text="800"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price_child"
+                android:textColor="@color/custom_grey"
+                android:textSize="14sp"
+                android:layout_alignBottom="@+id/tvSessionTime"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/price_student"
+                android:layout_marginStart="10dp"
+                android:text="500"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/price_vip"
+                android:textColor="@color/custom_grey"
+                android:textSize="14sp"
+                android:layout_alignBottom="@+id/tvSessionTime"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/price_child"
+                android:layout_marginStart="10dp"
+                android:text="4000"/>
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SessionActivity">
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20:00"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionFilmTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTime"
+        android:text="Film"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionCinemaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSessionFilmTitle"
+        android:text="Cinema"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSessionCinemaTitle"
+        android:text="Lang"/>
+
+
+    <TextView
+        android:id="@+id/textPrices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSessionLanguage"
+        android:text="Adult, stud, child, vip - prices"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionPriceAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPrices"
+        android:layout_marginRight="10dp"
+        android:text="1000"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionPriceStud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPrices"
+        android:layout_toEndOf="@+id/tvSessionPriceAdult"
+        android:layout_marginRight="10dp"
+        android:text="1000"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionPriceChild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPrices"
+        android:layout_toEndOf="@+id/tvSessionPriceStud"
+        android:layout_marginRight="10dp"
+        android:text="1000"/>
+
+
+    <TextView
+        android:id="@+id/tvSessionPriceVip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPrices"
+        android:layout_toEndOf="@+id/tvSessionPriceChild"
+        android:layout_marginRight="10dp"
+        android:text="1000"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_below="@+id/tvSessionPriceVip"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:text="-"/>
+
+
+</RelativeLayout>
