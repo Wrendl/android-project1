@@ -28,6 +28,9 @@
         <argument
             android:name="login"
             app:argType="string" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -51,4 +54,8 @@
         android:name="com.example.app1.main_list.FilmListFragment"
         android:label="film_list_fragment"
         tools:layout="@layout/film_list_fragment" />
+    <fragment
+        android:id="@+id/myTicketsFragment"
+        android:name="com.example.app1.MyTicketsFragment"
+        android:label="MyTicketsFragment" />
 </navigation>

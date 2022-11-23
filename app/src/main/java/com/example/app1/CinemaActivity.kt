@@ -45,12 +45,14 @@ class CinemaActivity : AppCompatActivity(), SessionAdapterCinema.OnItemClickList
     }
 
     override fun onItemClick(position: Int) {
-//        Toast.makeText(this, "Item $position clicked", Toast.LENGTH_SHORT).show()
-//        val clickedItem = cinemaArr[position]
-        val message = sessionList[position]
-        val intent = Intent(this, SessionActivity::class.java).apply{
-            putExtra(EXTRA_MESSAGE1, message)
+        if (getActiveUser() != null) {
+            val message = sessionList[position]
+            val intent = Intent(this, SessionActivity::class.java).apply {
+                putExtra(EXTRA_MESSAGE1, message)
+            }
+            startActivity(intent)
+        }else{
+            Toast.makeText(this, "You are unauthorized", Toast.LENGTH_SHORT).show()
         }
-        startActivity(intent)
     }
 }

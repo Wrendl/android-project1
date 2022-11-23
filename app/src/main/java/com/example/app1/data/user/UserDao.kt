@@ -12,12 +12,18 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(user: User)
 
-    @Query("SELECT * FROM user_table ORDER BY id ASC")
+    @Query("SELECT * FROM user_table_ver2 ORDER BY id ASC")
     fun  readAllData(): List<User>
 
-    @Query("SELECT * FROM user_table WHERE id = :user_id")
+    @Query("SELECT * FROM user_table_ver2 WHERE id = :user_id")
     fun  getUser(user_id: Int): User
 
-    @Query("SELECT * FROM user_table WHERE login = :user_login")
+    @Query("SELECT * FROM user_table_ver2 WHERE login = :user_login")
     fun  getUserByLogin(user_login: String): User
+
+    @Query("UPDATE user_table_ver2 SET money = money + 5000 WHERE login = :user_login")
+    fun  addCash(user_login: String)
+
+    @Query("UPDATE user_table_ver2 SET money = money - 5000 WHERE login = :user_login")
+    fun deleteCash(user_login: String)
 }

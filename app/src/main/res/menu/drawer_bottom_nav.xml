@@ -13,7 +13,7 @@
         android:title="Cinemas"/>
 
     <item
-        android:id="@+id/ticketsFragment"
+        android:id="@+id/myTicketsFragment"
         android:icon="@mipmap/tickets_icon_foreground"
         android:title="Tickets"/>
 

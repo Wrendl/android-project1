@@ -1,6 +1,7 @@
 package com.example.app1
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,12 @@ import kotlinx.android.synthetic.main.activity_session.*
 
 class SessionActivity : AppCompatActivity() {
     var selectedButton = "-"
+    var totalTickets = mapOf(
+        "Взрослый" to 0,
+        "Студ." to 0,
+        "Детский" to 0,
+        "VIP" to 0
+        )
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,16 +42,20 @@ class SessionActivity : AppCompatActivity() {
         popupMenu2.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.adult -> {
-                    tv.text = tv.text.toString() + "Adult" + selectedButton
+//                    tv.text = tv.text.toString() + "Adult" + selectedButton
+                    printTickets("Взрослый")
                 }
                 R.id.stud -> {
-                    tv.text = tv.text.toString() + "Stud" + selectedButton
+//                    tv.text = tv.text.toString() + "Stud" + selectedButton
+                    printTickets("Студ.")
                 }
                 R.id.child -> {
-                    tv.text = tv.text.toString() + "Child" + selectedButton
+//                    tv.text = tv.text.toString() + "Child" + selectedButton
+                    printTickets("Детский")
                 }
                 R.id.vip -> {
-                    tv.text = tv.text.toString() + "Vip" + selectedButton
+//                    tv.text = tv.text.toString() + "Vip" + selectedButton
+                    printTickets("VIP")
                 }
             }
             false
@@ -57,6 +68,43 @@ class SessionActivity : AppCompatActivity() {
             }
         }
 
+        buttonNext.setOnClickListener() {
+            var sum = 0
+            if (session != null) {
+                sum += totalTickets["Взрослый"]!! * session.priceAdult.toInt()
+                sum += totalTickets["Студ."]!! * session.priceStud.toInt()
+                sum += totalTickets["Детский"]!! * session.priceChild.toInt()
+                sum += totalTickets["VIP"]!! * session.priceVip.toInt()
+            }
+
+            var message = sum.toString()
+            val intent = Intent(this, CartActivity::class.java).apply{
+                putExtra(EXTRA_MESSAGE1, message)
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun printTickets(type: String) {
+        var answer = ""
+        var intAdd = totalTickets[type]
+        if (intAdd != null) {
+            totalTickets = totalTickets + mapOf(type to (intAdd + 1))
+        }
+
+        if ( totalTickets["Взрослый"] != 0 ){
+            answer = answer + "Взрослый: " + totalTickets["Взрослый"].toString() + "\n"
+        }
+        if ( totalTickets["Студ."] != 0 ){
+            answer = answer + "Студ.: " + totalTickets["Студ."].toString() + "\n"
+        }
+        if ( totalTickets["Детский"] != 0 ){
+            answer = answer + "Детский: " + totalTickets["Детский"].toString() + "\n"
+        }
+        if ( totalTickets["VIP"] != 0 ){
+            answer = answer + "VIP: " + totalTickets["VIP"].toString() + "\n"
+        }
+        tv.text = answer
     }
 
     private fun getButtons(): ArrayList<Button> {

@@ -1,20 +1,16 @@
 package com.example.app1.auth
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.app1.R
-import com.example.app1.data.user.UserDao
-import com.example.app1.data.user.UserDatabase
+import com.example.app1.changeUser
 import com.example.app1.data.user.UserViewModel
+import com.example.app1.getActiveUser
 import kotlinx.android.synthetic.main.profile_fragment.*
-import java.lang.Exception
-import kotlin.math.log
 
 class ProfileFragment: Fragment(R.layout.profile_fragment) {
 
@@ -25,6 +21,32 @@ class ProfileFragment: Fragment(R.layout.profile_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        username_text.text = mUserViewModel.getUserByLogin(args.login).login
+        val user = mUserViewModel.getUserByLogin(args.login)
+
+        changeUser(user)
+
+        val userActive = getActiveUser()
+
+        if (userActive != null) {
+            username_text.text = userActive.login
+            user_cash.text = userActive.money.toString()
+
+
+            button_add_cash.setOnClickListener() {
+                mUserViewModel.addCash(userActive.login)
+                activity?.recreate()
+            }
+
+            button_delete_cash.setOnClickListener() {
+                mUserViewModel.deleteCash(userActive.login)
+                activity?.recreate()
+            }
+
+            button_exit.setOnClickListener() {
+                changeUser(null)
+                val action = ProfileFragmentDirections.actionProfileFragmentToLoginFragment()
+                findNavController().navigate(action)
+            }
+        }
     }
 }

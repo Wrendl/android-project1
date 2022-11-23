@@ -36,7 +36,7 @@ class RegistrationFragment: Fragment(R.layout.register_fragment) {
             Toast.makeText(activity, "Account already exist", Toast.LENGTH_LONG).show()
         }
         else {
-            val user = User(0, login.toString(), firstPassword.toString(), mail.toString())
+            val user = User(0, login.toString(), firstPassword.toString(), mail.toString(), 11000)
             mUserViewModel.addUser(user)
 
             Toast.makeText(activity, "Good", Toast.LENGTH_LONG).show()
@@ -51,6 +51,7 @@ class RegistrationFragment: Fragment(R.layout.register_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
 
         button_register.setOnClickListener {
             insertDataToDatabase()

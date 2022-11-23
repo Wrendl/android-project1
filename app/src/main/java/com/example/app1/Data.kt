@@ -1,8 +1,12 @@
 package com.example.app1
 
+import android.widget.Toast
 import com.example.app1.data.cinema.Cinema
 import com.example.app1.data.film.Film
 import com.example.app1.data.session.Session
+import com.example.app1.data.user.User
+
+var actUser: User? = null
 
 fun cinemaList(): ArrayList<Cinema> {
     val list1 = ArrayList<Cinema>()
@@ -501,4 +505,12 @@ fun sessionForCinema(cinemaId: Int): ArrayList<Session> {
     }
 
     return list2
+}
+
+fun getActiveUser(): User? {
+    return actUser
+}
+
+fun changeUser(user: User?) {
+    actUser = user
 }
