@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.PopupMenu
 import com.example.app1.data.session.Session
+import com.example.app1.data.tickets.Tickets
+import com.example.app1.main_list.EXTRA_MESSAGE
 import com.example.app1.main_list.EXTRA_MESSAGE1
 import kotlinx.android.synthetic.main.activity_session.*
 
@@ -19,6 +21,7 @@ class SessionActivity : AppCompatActivity() {
         "Детский" to 0,
         "VIP" to 0
         )
+    var listOfTickets = ArrayList<Tickets>()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,35 +39,38 @@ class SessionActivity : AppCompatActivity() {
             tvSessionPriceStud.text = session.priceStud
             tvSessionPriceChild.text = session.priceChild
             tvSessionPriceVip.text = session.priceVip
-        }
-        val popupMenu2 = PopupMenu(this, buttonMain)
-        popupMenu2.inflate(R.menu.popup_menu)
-        popupMenu2.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.adult -> {
-//                    tv.text = tv.text.toString() + "Adult" + selectedButton
-                    printTickets("Взрослый")
+
+
+            val popupMenu2 = PopupMenu(this, buttonMain)
+            popupMenu2.inflate(R.menu.popup_menu)
+            popupMenu2.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.adult -> {
+                        printTickets("Взрослый")
+                        addToArrTickets("Взрослый", session)
+                    }
+                    R.id.stud -> {
+                        printTickets("Студ.")
+                        addToArrTickets("Студ.", session)
+                    }
+                    R.id.child -> {
+                        printTickets("Детский")
+                        addToArrTickets("Детский", session)
+                    }
+                    R.id.vip -> {
+                        printTickets("VIP")
+                        addToArrTickets("VIP", session)
+                    }
                 }
-                R.id.stud -> {
-//                    tv.text = tv.text.toString() + "Stud" + selectedButton
-                    printTickets("Студ.")
-                }
-                R.id.child -> {
-//                    tv.text = tv.text.toString() + "Child" + selectedButton
-                    printTickets("Детский")
-                }
-                R.id.vip -> {
-//                    tv.text = tv.text.toString() + "Vip" + selectedButton
-                    printTickets("VIP")
-                }
+                false
             }
-            false
-        }
-        val buttons = getButtons()
-        for (i in 0 until buttons.size) {
-             buttons[i].setOnClickListener{
-                 popupMenu2.show()
-                 selectedButton = buttons[i].text.toString()
+
+            val buttons = getButtons()
+            for (i in 0 until buttons.size) {
+                buttons[i].setOnClickListener{
+                    popupMenu2.show()
+                    selectedButton = buttons[i].text.toString()
+                }
             }
         }
 
@@ -77,12 +83,22 @@ class SessionActivity : AppCompatActivity() {
                 sum += totalTickets["VIP"]!! * session.priceVip.toInt()
             }
 
-            var message = sum.toString()
+            var sumResult = sum.toString()
             val intent = Intent(this, CartActivity::class.java).apply{
-                putExtra(EXTRA_MESSAGE1, message)
+                putExtra("sumResult", sumResult)
+                putExtra("listOfTickets", listOfTickets)
             }
             startActivity(intent)
         }
+    }
+
+    private fun addToArrTickets(ticketType: String, session: Session) {
+        val rowId = selectedButton[0].toInt() - 48
+        val columnId = selectedButton[1].toInt() - 48
+        val imageId = getImageFromFilm(session.filmId)
+
+        val ticket = Tickets(0,rowId, columnId, ticketType, session, imageId)
+        listOfTickets.add(ticket)
     }
 
     private fun printTickets(type: String) {

@@ -36,7 +36,7 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         repository.addCash(user_login)
     }
 
-    fun deleteCash(user_login: String) {
-        repository.deleteCash(user_login)
+    fun deleteCash(user_login: String, cash: Int) {
+        repository.deleteCash(user_login, cash)
     }
 }

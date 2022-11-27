@@ -38,7 +38,7 @@ class ProfileFragment: Fragment(R.layout.profile_fragment) {
             }
 
             button_delete_cash.setOnClickListener() {
-                mUserViewModel.deleteCash(userActive.login)
+                mUserViewModel.deleteCash(userActive.login, 5000)
                 activity?.recreate()
             }
 

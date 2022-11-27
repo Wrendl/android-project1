@@ -22,7 +22,7 @@ class UserRepository(private val userDao: UserDao) {
         userDao.addCash(user_login)
     }
 
-    fun deleteCash(user_login: String) {
-        userDao.deleteCash(user_login)
+    fun deleteCash(user_login: String, cash: Int) {
+        userDao.deleteCash(user_login, cash)
     }
 }

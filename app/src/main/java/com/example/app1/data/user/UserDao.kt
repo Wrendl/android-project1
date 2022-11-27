@@ -24,6 +24,6 @@ interface UserDao {
     @Query("UPDATE user_table_ver2 SET money = money + 5000 WHERE login = :user_login")
     fun  addCash(user_login: String)
 
-    @Query("UPDATE user_table_ver2 SET money = money - 5000 WHERE login = :user_login")
-    fun deleteCash(user_login: String)
+    @Query("UPDATE user_table_ver2 SET money = money - :cash WHERE login = :user_login")
+    fun deleteCash(user_login: String, cash: Int)
 }

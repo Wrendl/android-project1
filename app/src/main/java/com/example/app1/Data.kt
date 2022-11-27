@@ -4,9 +4,12 @@ import android.widget.Toast
 import com.example.app1.data.cinema.Cinema
 import com.example.app1.data.film.Film
 import com.example.app1.data.session.Session
+import com.example.app1.data.tickets.Tickets
 import com.example.app1.data.user.User
 
 var actUser: User? = null
+
+var listOfTickets = ArrayList<Tickets>()
 
 fun cinemaList(): ArrayList<Cinema> {
     val list1 = ArrayList<Cinema>()
@@ -513,4 +516,24 @@ fun getActiveUser(): User? {
 
 fun changeUser(user: User?) {
     actUser = user
+}
+
+fun getMyTickets(): ArrayList<Tickets> {
+    return listOfTickets
+}
+
+fun addToMyTickets(ticket: Tickets?) {
+    if (ticket != null) {
+        listOfTickets.add(ticket)
+    }
+}
+
+fun getImageFromFilm(id: Int): Int {
+    val list1 = filmList()
+    for (i in 0 until list1.size) {
+        if ( id == list1[i].id ) {
+            return list1[i].imageId
+        }
+    }
+    return R.drawable.f1
 }
