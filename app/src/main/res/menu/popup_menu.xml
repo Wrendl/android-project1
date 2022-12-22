@@ -17,9 +17,4 @@
         android:icon="@mipmap/tickets_icon_foreground"
         android:title="Child"/>
 
-    <item
-        android:id="@+id/vip"
-        android:icon="@mipmap/profile_icon_foreground"
-        android:title="Vip"/>
-
 </menu>

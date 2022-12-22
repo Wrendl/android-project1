@@ -57,6 +57,14 @@ class SessionActivity : AppCompatActivity() {
                         printTickets("Детский")
                         addToArrTickets("Детский", session)
                     }
+                }
+                false
+            }
+
+            val popupMenuVip = PopupMenu(this, buttonMain)
+            popupMenuVip.inflate(R.menu.popup_menu_vip)
+            popupMenuVip.setOnMenuItemClickListener {
+                when (it.itemId) {
                     R.id.vip -> {
                         printTickets("VIP")
                         addToArrTickets("VIP", session)
@@ -66,9 +74,16 @@ class SessionActivity : AppCompatActivity() {
             }
 
             val buttons = getButtons()
-            for (i in 0 until buttons.size) {
+            for (i in 0 until buttons.size - 8) {
                 buttons[i].setOnClickListener{
                     popupMenu2.show()
+                    selectedButton = buttons[i].text.toString()
+                }
+            }
+
+            for (i in buttons.size - 8 until buttons.size) {
+                buttons[i].setOnClickListener{
+                    popupMenuVip.show()
                     selectedButton = buttons[i].text.toString()
                 }
             }

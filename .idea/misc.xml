@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/drawable/circular_view.xml" value="0.108" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/drawable/gradient.xml" value="0.126" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
@@ -14,25 +15,27 @@
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/activity_session.xml" value="0.264" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/cinema_detail.xml" value="0.264" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/cinema_item.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/cinema_list_fragment.xml" value="0.4" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/cinema_list_fragment.xml" value="0.39351851851851855" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/film_detail.xml" value="0.264" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/film_item.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/film_list_fragment.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/home_fragment.xml" value="0.264" />
-        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/login_fragment.xml" value="0.16" />
-        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/movie_item.xml" value="0.1" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/login_container.xml" value="0.2273972602739726" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/login_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/movie_item.xml" value="0.4" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/my_tickets_detail.xml" value="0.19453125" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/my_tickets_fragment.xml" value="0.264" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/my_tickets_fragment_error.xml" value="0.259375" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/my_tickets_item.xml" value="0.23055555555555557" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/popup_test.xml" value="0.19375" />
-        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/profile_fragment.xml" value="0.24547101449275363" />
-        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/register_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/profile_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/register_fragment.xml" value="0.4" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/session_item_film.xml" value="0.259375" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/session_item_for_cinema.xml" value="0.259375" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/layout/theater_detail.xml" value="0.2" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/menu/drawer_bottom_nav.xml" value="0.259375" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/menu/popup_menu.xml" value="0.4" />
+        <entry key="..\:/Users/aishu/Desktop/old/Android/android-project1/app/src/main/res/menu/popup_menu_vip.xml" value="0.2128205128205128" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
         <entry key="..\:/Users/aishu/Desktop/old/Android/app/src/main/res/layout/cinema_item.xml" value="0.24547101449275363" />
       </map>

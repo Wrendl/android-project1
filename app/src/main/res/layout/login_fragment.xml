@@ -8,6 +8,7 @@
     android:padding="20dp"
     android:showDividers="middle"
     android:divider="@drawable/empty_tall_devider"
+    android:background="@color/ui_black"
     tools:context=".auth.LoginFragment">
 
     <EditText
@@ -17,6 +18,9 @@
         android:padding="12dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/grey_background"
+        android:textColorHint="@color/custom_grey"
+        android:textColor="@color/white"
         android:hint="Введите логин" />
 
     <EditText
@@ -26,7 +30,10 @@
         android:textSize="18sp"
         android:background="@drawable/rounded_edittext"
         android:id="@+id/edit_text_password"
+        android:backgroundTint="@color/grey_background"
+        android:textColorHint="@color/custom_grey"
         android:hint="Введите пароль"
+        android:textColor="@color/white"
         android:inputType="textPassword"/>
 
     <Button

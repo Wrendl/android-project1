@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/ui_black">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -23,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="0dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/grey_background">
 
             <ImageView
                 android:id="@+id/imFilm"
@@ -43,7 +45,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/imFilm"
                 android:text="Movie name"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </RelativeLayout>

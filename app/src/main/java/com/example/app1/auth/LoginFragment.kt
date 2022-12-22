@@ -1,13 +1,16 @@
 package com.example.app1.auth
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.app1.R
 import com.example.app1.data.user.UserViewModel
+import com.example.app1.getActiveUser
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.profile_fragment.*
 
@@ -17,6 +20,14 @@ class LoginFragment: Fragment(R.layout.login_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (getActiveUser() != null) {
+            val user = getActiveUser()
+            if (user!= null) {
+                val action = LoginFragmentDirections.actionLoginFragmentToProfileFragment(user.login)
+                findNavController().navigate(action)
+            }
+        }
 
         button_confirm.setOnClickListener {
             val login = edit_text_username.text.toString()

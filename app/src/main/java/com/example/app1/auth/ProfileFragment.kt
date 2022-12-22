@@ -47,6 +47,8 @@ class ProfileFragment: Fragment(R.layout.profile_fragment) {
                 val action = ProfileFragmentDirections.actionProfileFragmentToLoginFragment()
                 findNavController().navigate(action)
             }
+
+            imageView2.setImageResource(R.drawable.pfp)
         }
     }
 }

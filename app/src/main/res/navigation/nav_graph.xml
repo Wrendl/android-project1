@@ -58,4 +58,9 @@
         android:id="@+id/myTicketsFragment"
         android:name="com.example.app1.MyTicketsFragment"
         android:label="MyTicketsFragment" />
+    <fragment
+        android:id="@+id/loginContainerFragment"
+        android:name="com.example.app1.auth.LoginContainerFragment"
+        android:label="login_container"
+        tools:layout="@layout/login_container" />
 </navigation>
